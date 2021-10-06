@@ -1,7 +1,9 @@
+import sklearn
 from sklearn.datasets import load_boston
 from sklearn import linear_model
 import pandas as pd
 import numpy as np
+
 
 from pandas import Series,DataFrame
 
@@ -24,8 +26,12 @@ x = boston_df.drop("PRICE",1)
 
 y = boston_df.PRICE
 
-print(y)
 
-liner_regression = linear_model.LinerRegression(fi)
+clf = linear_model.LinearRegression()
 
-liner_regression.fit(x,y)
+clf.fit(x,y)
+print("切片：",clf.intercept_)
+print("回帰係数：",clf.coef_)
+print("決定係数：",clf.score(x,y))
+
+plt.scatter(x,y)
