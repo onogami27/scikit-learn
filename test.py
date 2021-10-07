@@ -33,5 +33,6 @@ clf.fit(x,y)
 print("切片：",clf.intercept_)
 print("回帰係数：",clf.coef_)
 print("決定係数：",clf.score(x,y))
-
-plt.scatter(x,y)
+#print(boston_df)
+plt.scatter(boston_df["PRICE"],boston_df["CRIM"])
+plt.show()
